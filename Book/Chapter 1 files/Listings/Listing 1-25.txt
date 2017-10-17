@@ -1,0 +1,3 @@
+data = data.dropna()
+seaborn.pairplot(data, vars=['age', 'tripduration'], kind='reg')
+plt.show()

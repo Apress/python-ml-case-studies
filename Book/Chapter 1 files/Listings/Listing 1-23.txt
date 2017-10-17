@@ -1,0 +1,10 @@
+def transform_tripduration(x):
+    
+    if x > upper_whisker:
+        return mean_trip_duration
+    return x
+
+data['tripduration_mean'] = data['tripduration'].apply(lambda x: transform_tripduration(x))
+
+data['tripduration_mean'].plot.hist(bins=100, title='Frequency distribution of mean transformed Trip duration')
+plt.show()

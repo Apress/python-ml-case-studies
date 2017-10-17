@@ -1,0 +1,3 @@
+data_log_decompose = pd.Series(residual)
+data_log_decompose.dropna(inplace=True)
+evaluate_stationarity(data_log_decompose)

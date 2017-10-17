@@ -1,0 +1,11 @@
+matrix, x_cols = matrix_from_df(data_train)
+X  = matrix[x_cols].as_matrix()
+
+dpgmm = mixture.BayesianGaussianMixture(n_components=3,
+                                        covariance_type='full', random_state=1).fit(X)
+
+labels = dpgmm.predict(X)
+plot_results(X, labels, dpgmm.means_, dpgmm.covariances_, 1,
+             'Bayesian Gaussian Mixture with a Dirichlet process prior-%s'%dpgmm.converged_)
+
+plt.show()

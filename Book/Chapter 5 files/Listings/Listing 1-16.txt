@@ -1,0 +1,5 @@
+data_dow_status = data.groupby(['Sms_Reminder', 'Status'])['Sms_Reminder'].count().unstack('Status').fillna(0)
+data_dow_status[[0, 1]].plot(kind='bar', stacked=True)
+plt.title('Frequency of people showing up and not showing up by number of SMS reminders sent')
+plt.xlabel('Number of SMS reminders')
+plt.ylabel('Frequency')

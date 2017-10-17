@@ -1,0 +1,7 @@
+pca = PCA(n_components=2)
+matrix['x'] = pca.fit_transform(matrix[x_cols])[:,0]
+matrix['y'] = pca.fit_transform(matrix[x_cols])[:,1]
+matrix = matrix.reset_index()
+
+customer_clusters = matrix[['title', 'cluster', 'x', 'y']]
+customer_clusters.head()

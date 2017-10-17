@@ -1,0 +1,6 @@
+matrix, x_cols = matrix_from_df(data_train)
+X = matrix[x_cols]
+
+cluster = KMeans(n_clusters = 9, random_state = 2)
+matrix['cluster'] = cluster.fit_predict(X)
+matrix.cluster.value_counts()

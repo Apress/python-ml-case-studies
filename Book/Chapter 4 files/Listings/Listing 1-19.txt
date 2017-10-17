@@ -1,0 +1,1 @@
+perform_cluster_group_audit([0,4], 'search')

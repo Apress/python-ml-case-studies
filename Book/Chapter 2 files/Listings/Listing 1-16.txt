@@ -1,0 +1,29 @@
+plt.figure(figsize=(15,7))
+plot_count = 1
+
+for feature in ['cement_component', 'flay_ash', 'water_component', 'superplasticizer', 'coarse_aggregate']:
+    data_tr = data[['concrete_strength', feature]]
+    data_tr=data_tr[(data_tr.T != 0).all()]
+    
+    x_train, y_train, x_test, y_test = split_train_test(data_tr, feature)
+
+    # Create linear regression object
+    regr = SVR(kernel='linear')
+
+    # Train the model using the training sets
+    regr.fit(x_train, y_train)
+    y_pred = regr.predict(x_test)
+    
+    # Plot outputs
+    plt.subplot(2,3,plot_count)
+    
+    plt.scatter(x_test, y_test,  color='black')
+    plt.plot(x_test, y_pred, color='blue', linewidth=3)
+    plt.xlabel(feature.replace('_',' ').title())
+    plt.ylabel('Concrete strength')
+
+    print feature, r2_score(y_test, y_pred)
+    
+    plot_count+=1
+        
+plt.show()

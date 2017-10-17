@@ -1,0 +1,7 @@
+pd.set_option('display.width', 100)
+pd.set_option('precision', 3)
+
+data['age'] = data['starttime_year'] - data['birthyear']
+
+correlations = data[['tripduration','age']].corr(method='pearson')
+print(correlations)

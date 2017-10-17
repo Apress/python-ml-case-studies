@@ -1,0 +1,3 @@
+data_log_diff = data_log - data_log.shift()
+data_log_diff.dropna(inplace=True)
+evaluate_stationarity(data_log_diff)

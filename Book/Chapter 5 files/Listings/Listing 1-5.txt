@@ -1,0 +1,14 @@
+def features_plots(discrete_vars):
+
+    plt.figure(figsize=(15,24.5))
+
+    for i, cv in enumerate(['Age', 'AwaitingTime']):
+        plt.subplot(7, 2, i+1)
+        plt.hist(data[cv], bins=len(data[cv].unique()))
+        plt.title(cv)
+        plt.ylabel('Frequency')
+
+    for i, dv in enumerate(discrete_vars):
+        plt.subplot(7, 2, i+3)
+        data[dv].value_counts().plot(kind='bar', title=dv)
+        plt.ylabel('Frequency')

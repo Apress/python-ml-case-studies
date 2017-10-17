@@ -1,0 +1,3 @@
+data = data.sort_values(by='birthyear')
+groupby_birthyear = data.groupby('birthyear').size()
+groupby_birthyear.plot.bar(title = 'Distribution of birth years', figsize = (15,4))

@@ -1,0 +1,14 @@
+data_log = np.log(data_train['Close_Adj'])
+
+#Determing rolling statistics
+rolmean = data_log.rolling(window=15).mean()
+rolstd = data_log.rolling(window=15).std()
+
+#Plot rolling statistics:
+orig = plt.plot(data_log, color='blue',label='Original')
+mean = plt.plot(rolmean, color='red', label='Rolling Mean')
+std = plt.plot(rolstd, color='black', label = 'Rolling Std')
+plt.legend(loc='best')
+plt.ylim([7.4,7.8])
+plt.title('Rolling Mean & Standard Deviation')
+plt.show(block=False)

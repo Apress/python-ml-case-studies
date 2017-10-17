@@ -1,0 +1,23 @@
+%matplotlib inline
+
+import time
+import random
+import datetime
+import pandas as pd
+import matplotlib.pyplot as plt
+import statistics
+import numpy as np
+from scipy import stats
+from sklearn.grid_search import GridSearchCV
+from sklearn.linear_model import RANSACRegressor, LinearRegression, TheilSenRegressor
+from sklearn.metrics import explained_variance_score, mean_absolute_error, mean_squared_error, median_absolute_error, r2_score
+
+from sklearn.svm import SVR
+from sklearn.linear_model import Ridge,Lasso,ElasticNet,BayesianRidge
+from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.cross_validation import train_test_split
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.cross_validation import cross_val_score
+import seaborn
+from IPython.display import Image

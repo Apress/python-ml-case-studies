@@ -1,0 +1,1 @@
+data[data['usertype']=='Short-Term Pass Holder']['gender'].isnull().values.all()

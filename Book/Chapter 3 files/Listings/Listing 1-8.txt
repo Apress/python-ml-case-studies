@@ -1,0 +1,2 @@
+data_sqrt = np.sqrt(data_train['Close_Adj'])
+evaluate_stationarity(data_sqrt, 15)

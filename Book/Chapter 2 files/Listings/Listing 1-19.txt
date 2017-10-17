@@ -1,0 +1,14 @@
+feature = 'water_component'
+wc_new_data = [200]
+
+data_tr = data[['concrete_strength', feature]]
+data_tr=data_tr[(data_tr.T != 0).all()]
+
+x_train, y_train, x_test, y_test = split_train_test(data_tr, feature)
+
+regr = GradientBoostingRegressor()
+
+# Train the model using the training sets
+regr.fit(x_train, y_train)
+cs_pred = regr.predict(wc_new_data)
+print 'Predicted value of concrete strength: %f'%cs_pred

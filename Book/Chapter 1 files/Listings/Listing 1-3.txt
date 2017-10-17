@@ -1,0 +1,2 @@
+print len(data)
+data.head()

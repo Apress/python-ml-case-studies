@@ -1,0 +1,5 @@
+data_dow_status = data.groupby(['DayOfTheWeek', 'Status'])['DayOfTheWeek'].count().unstack('Status').fillna(0)
+data_dow_status[[0, 1]].plot(kind='bar', stacked=True)
+plt.title('Frequency of people showing up and not showing up by Day of the week')
+plt.xlabel('Day of the week')
+plt.ylabel('Frequency')

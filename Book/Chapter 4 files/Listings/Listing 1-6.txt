@@ -1,0 +1,6 @@
+def matrix_from_df(data_train):
+
+    matrix = data_train.pivot_table(index = ['title'], columns=['groups'], values='flags')
+    matrix = matrix.fillna(0).reset_index()
+    x_cols = matrix.columns[1:]
+    return matrix, x_cols

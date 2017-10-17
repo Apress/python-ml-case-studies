@@ -1,0 +1,13 @@
+for cat in ['gender','usertype']:
+
+    print 'Category: %s\n'%cat
+    groupby_category = data.groupby(['starttime_date', cat])['starttime_date'].count().unstack(cat)
+    groupby_category = groupby_category.dropna()
+    category_names = list(groupby_category.columns)
+
+    for comb in [(category_names[i],category_names[j]) for i in range(len(category_names)) for j in range(i+1, len(category_names))]:
+
+        print '%s %s'%(comb[0], comb[1])
+        t_statistics = stats.ttest_ind(list(groupby_category[comb[0]]), list(groupby_category[comb[1]]))
+        print 'Statistic: %f, P value: %f'%(t_statistics.statistic, t_statistics.pvalue)
+        print '\n'

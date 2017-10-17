@@ -1,0 +1,4 @@
+pd.set_option('display.width', 100)
+pd.set_option('precision', 3)
+correlations = data[['Age', 'AwaitingTime']].corr(method='pearson')
+print(correlations)

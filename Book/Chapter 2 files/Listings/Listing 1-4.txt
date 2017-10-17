@@ -1,0 +1,2 @@
+data.columns = ['cement_component', 'furnace_slag', 'flay_ash', 'water_component', 'superplasticizer', \
+	'coarse_aggregate', 'fine_aggregate', 'age', 'concrete_strength']

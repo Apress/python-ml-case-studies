@@ -1,0 +1,2 @@
+customer_clusters.columns.name = None
+df = data_train.merge(customer_clusters, on='title')

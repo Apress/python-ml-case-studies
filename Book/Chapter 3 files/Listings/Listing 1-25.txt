@@ -1,0 +1,19 @@
+def mean_forecast_err(y, yhat):
+    return y.sub(yhat).mean()
+
+def mean_absolute_err(y, yhat):
+    return np.mean((np.abs(y.sub(yhat).mean()) / yhat)) # or percent error = * 100
+
+
+def rmse(y, yhat):
+    return np.sqrt(sum((yhat-y)**2)/len(y))
+
+
+predictions_ARIMA = np.exp(predictions_ARIMA_log)
+plt.plot(data_train['Close_Adj'])
+plt.plot(predictions_ARIMA)
+
+plt.title('RMSE: %.4f | MFE: %.4f | MAE: %.4f'% (
+        rmse(data_train['Close_Adj'], predictions_ARIMA), mean_forecast_err(
+            data_train['Close_Adj'], predictions_ARIMA), mean_absolute_err(
+            data_train['Close_Adj'], predictions_ARIMA)))

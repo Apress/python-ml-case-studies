@@ -1,0 +1,17 @@
+%matplotlib inline
+
+import pandas as pd
+import numpy as np
+from datetime import datetime
+import statsmodels.api as sm
+import matplotlib.pyplot as plt
+from IPython.display import Image
+from matplotlib.pylab import rcParams
+from statsmodels.tsa.stattools import adfuller
+from statsmodels.tsa.stattools import acf, pacf
+from sklearn.linear_model import LinearRegression
+from statsmodels.tsa.arima_model import ARMA, ARIMA
+from sklearn.metrics import explained_variance_score
+from matplotlib.finance import fetch_historical_yahoo, parse_yahoo_historical_ochl
+
+rcParams['figure.figsize'] = 15, 5

@@ -1,0 +1,16 @@
+plt.figure(figsize=(15,3.5))
+
+for i, status in enumerate(['no show ups', 'show ups']):
+    
+    data_show = data[data['Status']==i]
+    plt.subplot(1, 2, i+1)
+    
+    for gender in [0, 1]:
+        data_gender = data_show[data_show['Gender']==gender]
+        freq_age = data_gender['Age'].value_counts().sort_index()
+        freq_age.plot()
+
+    plt.title('Age wise frequency of patient %s for both genders'%status)
+    plt.xlabel('Age')
+    plt.ylabel('Frequency')
+    plt.legend(['Female', 'Male'], loc='upper left')

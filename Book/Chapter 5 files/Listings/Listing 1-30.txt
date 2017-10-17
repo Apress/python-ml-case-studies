@@ -1,0 +1,2 @@
+clf = RandomForestClassifier()
+clf.fit(x_train, y_train)

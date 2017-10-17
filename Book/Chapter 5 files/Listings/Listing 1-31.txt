@@ -1,0 +1,2 @@
+y_pred = clf.predict(x_test)
+model_performance('Random Forest', x_train, y_train, y_test, y_pred)

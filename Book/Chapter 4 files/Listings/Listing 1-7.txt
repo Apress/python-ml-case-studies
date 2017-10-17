@@ -1,0 +1,2 @@
+matrix, x_cols = matrix_from_df(data_train)
+matrix.head()

@@ -1,0 +1,1 @@
+data[data['Age'] < 0]['Age'].value_counts().sum()

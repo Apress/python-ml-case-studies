@@ -1,0 +1,19 @@
+%matplotlib inline
+
+import operator
+import itertools
+import numpy as np
+import pandas as pd
+from ggplot import *
+import seaborn as sns
+import matplotlib as mpl
+from sklearn import mixture
+import matplotlib.pyplot as plt
+from matplotlib.pylab import rcParams
+from sklearn.decomposition import PCA
+from wordcloud import WordCloud, STOPWORDS
+from scipy.spatial.distance import cdist, pdist
+from sklearn.cluster import KMeans, SpectralClustering
+from sklearn.metrics import euclidean_distances, silhouette_score
+
+rcParams['figure.figsize'] = 15, 5

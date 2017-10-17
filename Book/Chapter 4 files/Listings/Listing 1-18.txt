@@ -1,0 +1,13 @@
+def perform_cluster_group_audit(clusters, term):
+
+    for cluster in clusters:
+
+        df_cluster = df[df['cluster'] == cluster]
+        print 'Cluster number: %d'%(cluster + 1)
+        keywords = list(df_cluster['keywords'])
+        keywords = [keyword.split('\n') for keyword in keywords]
+        keywords = [item for sublist in keywords for item in sublist]
+        keywords = [keyword.lower() for keyword in keywords if term in keyword.lower()]
+        keywords_freq = {x:keywords.count(x) for x in keywords}
+        print sorted(keywords_freq.items(), key=operator.itemgetter(1), reverse=True)
+        print '\n'

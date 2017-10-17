@@ -1,0 +1,23 @@
+matrix, x_cols = matrix_from_df(data_train)
+X = matrix[x_cols]
+
+K = range(1,50)
+KM = [KMeans(n_clusters=k).fit(X) for k in K]
+centroids = [k.cluster_centers_ for k in KM]
+
+D_k = [cdist(X, cent, 'euclidean') for cent in centroids]
+dist = [np.min(D,axis=1) for D in D_k]
+
+wcss = [sum(d**2) for d in dist]
+tss = sum(pdist(X)**2)/X.shape[0]
+bss = tss-wcss
+
+kIdx = 10-1
+
+fig = plt.figure()
+ax = fig.add_subplot(111)
+ax.plot(K, bss/tss*100, 'b*-')
+plt.grid(True)
+plt.xlabel('Number of clusters')
+plt.ylabel('Percentage of variance explained')
+plt.title('Elbow for KMeans clustering')

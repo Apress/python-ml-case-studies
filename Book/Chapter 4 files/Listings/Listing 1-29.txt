@@ -1,0 +1,1 @@
+plot_wordcloud(df, dpgmm.n_components, 'keywords')

@@ -1,0 +1,21 @@
+features = ['cement_component', 'flay_ash', 'water_component', 'superplasticizer', 'coarse_aggregate']
+
+data_tr = data
+data_tr=data_tr[(data_tr.T != 0).all()]
+
+x_train, y_train, x_test, y_test = split_train_test(data_tr, features)
+
+# Create linear regression object
+regr = LinearRegression()
+
+# Train the model using the training sets
+regr.fit(x_train, y_train)
+y_pred = regr.predict(x_test)
+
+plt.scatter(range(len(y_test)), y_test,  color='black')
+plt.plot(y_pred, color='blue', linewidth=3)
+
+print 'Features: %s'%str(features)
+print 'R2 score: %f'%r2_score(y_test, y_pred)
+print 'Intercept: %f'%regr.intercept_
+print 'Coefficients: %s'%str(regr.coef_)

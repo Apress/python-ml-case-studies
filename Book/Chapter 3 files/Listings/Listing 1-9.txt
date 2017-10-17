@@ -1,0 +1,3 @@
+moving_avg = pd.rolling_mean(data_log,15)
+plt.plot(data_log)
+plt.plot(moving_avg, color='red')

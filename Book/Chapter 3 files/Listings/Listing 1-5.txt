@@ -1,0 +1,1 @@
+evaluate_stationarity(data_train['Close_Adj'], 15)

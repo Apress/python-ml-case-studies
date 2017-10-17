@@ -1,0 +1,3 @@
+data = data.sort_values(by='starttime')
+data.reset_index()
+print 'Date range of dataset: %s - %s'%(data.ix[1, 'starttime'], data.ix[len(data)-1, 'stoptime'])

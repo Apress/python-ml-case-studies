@@ -1,0 +1,18 @@
+def plot_wordcloud(df, clusters, pivot):
+
+    fig = plt.figure(figsize=(15,29.5))
+    for cluster in range(clusters):
+        List_ = []
+
+        for x in df[df['cluster']==cluster][pivot]:
+            try:
+                List_.extend(x.split('\n'))
+            except:
+                pass
+
+        if List_:
+            ax = fig.add_subplot(5,2,cluster+1)
+            wordcloud = wordcloud_object(List_)
+            plt.title('Cluster: %d'%(cluster+1))
+            ax.imshow(wordcloud)
+            ax.axis('off')

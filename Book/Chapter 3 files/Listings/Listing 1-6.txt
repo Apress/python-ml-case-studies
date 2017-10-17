@@ -1,0 +1,2 @@
+data_log = np.log(data_train['Close_Adj'])
+evaluate_stationarity(data_log, 15)

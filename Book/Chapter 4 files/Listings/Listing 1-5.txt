@@ -1,0 +1,2 @@
+data_train['flags'] = pd.Series(np.ones(len(data_train)), index=data_train.index)
+data_train.head()

@@ -1,0 +1,6 @@
+cluster_centers = pca.transform(cluster.cluster_centers_)
+cluster_centers = pd.DataFrame(cluster_centers, columns=['x', 'y'])
+cluster_centers['cluster'] = range(0, len(cluster_centers))
+
+plt.scatter(customer_clusters['x'], customer_clusters['y'], s = 20, c=customer_clusters['cluster'])
+plt.scatter(cluster_centers['x'], cluster_centers['y'], s = 150, c=cluster_centers['cluster'])

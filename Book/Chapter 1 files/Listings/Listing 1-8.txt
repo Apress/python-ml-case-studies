@@ -1,0 +1,3 @@
+data_mil = data[(data['birthyear'] >= 1977) & (data['birthyear']<=1994)]
+groupby_mil = data_mil.groupby('usertype').size()
+groupby_mil.plot.bar(title = 'Distribution of user types')

@@ -1,0 +1,11 @@
+plt.figure(figsize=(15,10.5))
+plot_count = 1
+
+for feature in list(data.columns)[:-1]:
+        plt.subplot(3,3,plot_count)
+        plt.scatter(data[feature], data['concrete_strength'])
+        plt.xlabel(feature.replace('_',' ').title())
+        plt.ylabel('Concrete strength')
+        plot_count+=1
+        
+plt.show()

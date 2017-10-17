@@ -1,0 +1,17 @@
+regr = LinearRegression()
+
+x_train = [[x] for x in range(len(data_train))]
+y_train = [[y] for y in list(data_train['Close_Adj'])]
+
+x_test = [[z] for z in range(x+1, x + 1+len(data_test))]
+
+regr.fit(x_train, y_train)
+
+y_pred = regr.predict(x_test)
+
+explained_variance_score(data_test['Close_Adj'], y_pred)
+
+plt.scatter(range(len(data_test)), data_test['Close_Adj'],  color='black')
+plt.plot(range(len(data_test)), y_pred, color='blue',
+             linewidth=3)
+plt.ylabel('Concrete strength')

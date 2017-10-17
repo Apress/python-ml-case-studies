@@ -1,0 +1,2 @@
+groupby_gender = data.groupby('gender').size()
+groupby_gender.plot.bar(title = 'Distribution of genders')

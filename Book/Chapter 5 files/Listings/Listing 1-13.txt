@@ -1,0 +1,5 @@
+discrete_vars = ['Gender', 'DayOfTheWeek', 'Status', 'Diabetes',
+                     'Alcoolism', 'HiperTension', 'Smokes',
+                         'Scholarship', 'Tuberculosis', 'Sms_Reminder']
+
+features_plots(discrete_vars)

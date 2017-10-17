@@ -1,0 +1,2 @@
+groupby_user = data.groupby('usertype').size()
+groupby_user.plot.bar(title = 'Distribution of user types')

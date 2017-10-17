@@ -1,0 +1,4 @@
+q75, q25 = np.percentile(trip_duration, [75 ,25])
+iqr = q75 - q25
+print 'Proportion of values as outlier: %f percent'%(
+(len(data) - len([x for x in trip_duration if q75+(1.5*iqr) >=x>= q25-(1.5*iqr)]))*100/float(len(data)))

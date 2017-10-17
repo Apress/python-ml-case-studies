@@ -1,0 +1,16 @@
+s = []
+
+for n_clusters in range(2,30):
+    kmeans = KMeans(n_clusters=n_clusters)
+    kmeans.fit(X)
+
+    labels = kmeans.labels_
+    centroids = kmeans.cluster_centers_
+
+    s.append(silhouette_score(X, labels, metric='euclidean'))
+
+plt.plot(s)
+plt.ylabel("Silouette")
+plt.xlabel("k")
+plt.title("Silouette for K-means cell's behaviour")
+sns.despine()

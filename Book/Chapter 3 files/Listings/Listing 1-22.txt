@@ -1,0 +1,2 @@
+predictions_ARIMA_diff_cumsum = predictions_ARIMA_diff.cumsum()
+print predictions_ARIMA_diff_cumsum.head()

@@ -1,0 +1,2 @@
+print len(data_train)
+data_train.head()

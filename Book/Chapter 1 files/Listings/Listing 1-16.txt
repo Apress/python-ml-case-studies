@@ -1,0 +1,2 @@
+data['tripduration'].plot.hist(bins=100, title='Frequency distribution of Trip duration')
+plt.show()

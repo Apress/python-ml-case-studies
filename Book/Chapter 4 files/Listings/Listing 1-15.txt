@@ -1,0 +1,5 @@
+def wordcloud_object(word_string):
+
+    FONT_ROOT = './fonts/'
+    wordcloud = WordCloud(font_path=FONT_ROOT + 'arial.ttf',stopwords=STOPWORDS, background_color='black', width=1200, height=1000).generate(' '.join(word_string))
+    return wordcloud

@@ -1,0 +1,1 @@
+data['AwaitingTime'] = data['AwaitingTime'].apply(lambda x: abs(x))

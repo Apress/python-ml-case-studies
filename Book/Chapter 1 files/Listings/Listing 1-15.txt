@@ -1,0 +1,5 @@
+trip_duration = list(data['tripduration'])
+station_from = list(data['from_station_name'])
+print 'Mean of trip duration: %f'%statistics.mean(trip_duration)
+print 'Median of trip duration: %f'%statistics.median(trip_duration)
+print 'Mode of station originating from: %s'%statistics.mode(station_from)

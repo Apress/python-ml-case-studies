@@ -1,0 +1,24 @@
+daily_tickets = list(data.groupby('starttime_date').size())
+sample_tickets = []
+checkpoints = [1, 10, 100, 300, 500, 1000]
+plot_count = 1
+
+random.shuffle(daily_tickets)
+
+plt.figure(figsize=(15,7))
+binrange=np.array(np.linspace(0,700,101))
+
+for i in xrange(1000):
+    if daily_tickets:
+        sample_tickets.append(daily_tickets.pop())
+
+    if i+1 in checkpoints or not daily_tickets:
+        plt.subplot(2,3,plot_count)
+        plt.hist(sample_tickets, binrange)
+        plt.title('n=%d' % (i+1),fontsize=15)        
+        plot_count+=1
+
+    if not daily_tickets:
+	break
+        
+plt.show()

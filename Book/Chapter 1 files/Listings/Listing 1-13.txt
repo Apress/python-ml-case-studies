@@ -1,0 +1,9 @@
+List_ = list(data['starttime'])
+
+List_ = [datetime.datetime.strptime(x, "%m/%d/%Y %H:%M") for x in List_]
+data['starttime_mod'] = pd.Series(List_,index=data.index)
+data['starttime_date'] = pd.Series([x.date() for x in List_],index=data.index)
+data['starttime_year'] = pd.Series([x.year for x in List_],index=data.index)
+data['starttime_month'] = pd.Series([x.month for x in List_],index=data.index)
+data['starttime_day'] = pd.Series([x.day for x in List_],index=data.index)
+data['starttime_hour'] = pd.Series([x.hour for x in List_],index=data.index)

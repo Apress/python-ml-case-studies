@@ -1,0 +1,2 @@
+data = pd.read_csv('examples/No-show-Issue-Comma-300k.csv')
+data.head()

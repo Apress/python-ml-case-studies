@@ -1,0 +1,5 @@
+model = ARIMA(data_log, order=(2, 1, 0), dates=data_log.index.to_datetime())  
+results_AR_210 = model.fit(disp=-1)
+plt.plot(data_log_diff)
+plt.plot(results_AR_210.fittedvalues, color='red')
+plt.title('RSS: %.4f'% sum((results_AR_210.fittedvalues-data_log_diff)**2))

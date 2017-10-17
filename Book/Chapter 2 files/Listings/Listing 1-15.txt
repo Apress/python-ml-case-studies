@@ -1,0 +1,12 @@
+model = GradientBoostingRegressor()
+
+y_pred = model.fit(x_train, y_train).predict(x_test)
+
+plt.scatter(range(len(y_test)), y_test,  color='black')
+plt.plot(y_pred, color='blue',
+         linewidth=3)
+
+print 'Features: %s'%str(features)
+print 'R2 score: %f'%r2_score(y_test, y_pred)
+print 'Intercept: %f'%regr.intercept_
+print 'Coefficients: %s'%str(regr.coef_)

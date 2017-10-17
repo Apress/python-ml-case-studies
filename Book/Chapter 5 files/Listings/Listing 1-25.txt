@@ -1,0 +1,12 @@
+features_of_choice = [u'Age', u'Gender', 'DayOfTheWeek', 'Diabetes', 'Alcoolism', 'HiperTension',
+                        'Smokes', 'Scholarship', 'Tuberculosis', 'Sms_Reminder',
+                        'AwaitingTime', 'AppointmentRegistration_year', 'AppointmentRegistration_month',
+                        'AppointmentRegistration_day', 'ApointmentData_year', 'ApointmentData_month',
+                        'ApointmentData_day', 'AppointmentRegistration_hour', 'AppointmentRegistration_min',
+                        'AppointmentRegistration_sec']
+
+
+x = np.array(data[features_of_choice])
+y = np.array(data['Status'])
+
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.3, random_state=1)

@@ -1,0 +1,3 @@
+data_ = data[(data.T != 0).any()]
+seaborn.	pairplot(data_, vars=data.columns, kind='reg')
+plt.show()

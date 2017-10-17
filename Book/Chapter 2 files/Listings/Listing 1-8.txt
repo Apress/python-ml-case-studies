@@ -1,0 +1,19 @@
+def split_train_test(data, feature, train_index=0.7):
+
+    train, test = train_test_split(data, test_size = 1-train_index)
+
+    if type(feature) == list:
+        x_train = train[feature].as_matrix()
+        y_train = train['concrete_strength'].as_matrix()
+
+        x_test = test[feature].as_matrix()
+        y_test = test['concrete_strength'].as_matrix()
+
+    else:
+        x_train = [[x] for x in list(train[feature])]
+        y_train = [[x] for x in list(train['concrete_strength'])]
+
+        x_test = [[x] for x in list(test[feature])]
+        y_test = [[x] for x in list(test['concrete_strength'])]
+        
+    return x_train, y_train, x_test, y_test

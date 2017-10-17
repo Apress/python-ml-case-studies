@@ -1,0 +1,20 @@
+%matplotlib inline
+
+import numpy as np
+import pandas as pd
+from time import time
+import matplotlib.pyplot as plt
+from IPython.display import Image
+from matplotlib.pylab import rcParams
+
+from sklearn import metrics
+from sklearn.cross_validation import train_test_split
+
+from sklearn.decomposition import PCA
+from sklearn import kernel_approximation
+from sklearn.linear_model import SGDClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.kernel_approximation import (RBFSampler,Nystroem)
+from sklearn.ensemble import GradientBoostingClassifier, RandomForestClassifier
+
+rcParams['figure.figsize'] = 15, 5

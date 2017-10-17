@@ -1,0 +1,13 @@
+dates = [x[0] for x in list(yahoo_data)]
+values = [x[-1] for x in list(yahoo_data)]
+data = pd.DataFrame({'Close_Adj':values}, index=dates)
+
+date_thresh = datetime.strptime('2016-10-01',"%Y-%m-%d").date()
+
+data_train = data[:date_thresh]
+data_test = data[date_thresh:]
+
+plt.plot(data_train.index, data['Close_Adj'])
+plt.xlabel('Year')
+plt.ylabel('Adjusted Closing Rate')
+plt.title('Yahoo Adjusted closing rate - Year 2016')

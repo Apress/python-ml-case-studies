@@ -1,0 +1,3 @@
+print 'Mean of trip duration: %f'%data['tripduration_mean'].mean()
+print 'Standard deviation of trip duration: %f'%data['tripduration_mean'].std()
+print 'Median of trip duration: %f'%data['tripduration_mean'].median()

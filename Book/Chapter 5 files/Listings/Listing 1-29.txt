@@ -1,0 +1,3 @@
+X_test = rbf_feature.fit_transform(x_test)
+Y_pred = clf.predict(X_test)
+model_performance('Kernel approximation', X_train, y_train, y_test, Y_pred)

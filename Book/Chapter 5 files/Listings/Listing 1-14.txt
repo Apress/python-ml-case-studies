@@ -1,0 +1,6 @@
+plt.scatter(data['Age'], data['AwaitingTime'], s=0.5)
+plt.title('Scatter plot of Age and Awaiting Time')
+plt.xlabel('Age')
+plt.ylabel('Awaiting Time')
+plt.xlim(0, 120)
+plt.ylim(0, 120)

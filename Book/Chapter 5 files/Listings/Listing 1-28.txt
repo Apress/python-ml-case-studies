@@ -1,0 +1,5 @@
+rbf_feature = kernel_approximation.RBFSampler(gamma=1, random_state=1)
+X_train = rbf_feature.fit_transform(x_train)
+
+clf = SGDClassifier()
+clf.fit(X_train, y_train)

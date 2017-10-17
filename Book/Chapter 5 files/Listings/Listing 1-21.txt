@@ -1,0 +1,3 @@
+for col in ['AppointmentRegistration', 'ApointmentData']:
+    for index, component in enumerate(['year', 'month', 'day']):
+        data['%s_%s'%(col, component)] = data[col].apply(lambda x: int(x.split('T')[0].split('-')[index]))
